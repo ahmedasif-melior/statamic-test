@@ -1,0 +1,128 @@
+<section class="relative min-h-[640px] lg:min-h-[740px] flex flex-col justify-between bg-zinc-900 overflow-hidden pt-28 sm:pt-32 pb-0">
+    <!-- Background Image with Ambient Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img 
+            src="{{ background_image ?? '/assets/hero-bg.jpg' }}" 
+            alt="Sheltersuit campaign" 
+            class="w-full h-full object-cover object-center lg:object-[center_25%]"
+            onerror="this.src='/assets/hero-winter.jpg';"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 lg:py-16 grow flex items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center w-full">
+            
+            <!-- Left Column: Copy & Actions -->
+            <div class="lg:col-span-7 text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tight uppercase leading-[1.05] drop-shadow-md">
+                    {{ headline ?? "WHERE WILL YOU SLEEP TONIGHT?" }}
+                </h1>
+                
+                <p class="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-white/95 max-w-xl leading-relaxed font-sans font-light">
+                    {{ lead_text ?? "Dakloosheid neemt wereldwijd toe. Voor mensen die buiten slapen kan een koude nacht letterlijk het verschil betekenen tussen leven en dood." }}
+                </p>
+
+                <div class="mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
+                    <a href="{{ button_primary_url ?? '#donate' }}" class="inline-flex items-center justify-center bg-[#FFD100] text-zinc-950 font-display tracking-wider text-xl uppercase px-8 py-3 rounded hover:bg-[#ebbf00] transition transform hover:-translate-y-0.5 shadow-lg">
+                        {{ button_primary_text ?? "GIVE WARMTH" }}
+                    </a>
+
+                    <a href="{{ button_secondary_url ?? '#about' }}" class="inline-flex items-center justify-center bg-[#E83B3B] text-white font-display tracking-wider text-xl uppercase px-8 py-3 rounded hover:bg-[#d32a2a] transition transform hover:-translate-y-0.5 shadow-lg">
+                        {{ button_secondary_text ?? "ABOUT US" }}
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Donation Card -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="bg-white text-zinc-900 rounded-3xl p-6 sm:p-7 shadow-2xl w-full max-w-md border border-zinc-100/50 backdrop-blur-sm">
+                    
+                    <h2 class="text-3xl sm:text-4xl font-display tracking-tight uppercase text-zinc-950">
+                        {{ donation_title ?? "MAKE A DIFFERENCE" }}
+                    </h2>
+                    
+                    <p class="text-sm text-zinc-600 mt-1 mb-5">
+                        {{ donation_subtitle ?? "Help us make the world a better place." }}
+                    </p>
+
+                    <!-- Frequency Selector Tabs -->
+                    <div class="grid grid-cols-2 gap-2 p-1 bg-zinc-100 rounded-lg">
+                        <button type="button" class="donation-freq-btn py-2 text-sm font-semibold rounded-md border border-zinc-300 bg-white text-zinc-700 hover:text-zinc-950 transition" data-freq="once">
+                            one time
+                        </button>
+                        <button type="button" class="donation-freq-btn py-2 text-sm font-bold rounded-md bg-[#FFD100] text-zinc-950 shadow-sm transition" data-freq="monthly">
+                            Monthly
+                        </button>
+                    </div>
+
+                    <!-- Amount Selection Label -->
+                    <p class="text-xs font-semibold text-zinc-700 uppercase tracking-wide mt-5 mb-2.5">
+                        Choose a monthly amount
+                    </p>
+
+                    <!-- Amount Options Grid -->
+                    <div class="grid grid-cols-3 gap-2.5">
+                        {{ if donation_options }}
+                            {{ donation_options }}
+                                <button type="button" 
+                                    class="donation-amount-btn rounded-xl p-2.5 sm:p-3 text-center transition {{ is_featured ? 'border-2 border-[#FFD100] bg-[#FFD100] shadow-sm' : 'border border-zinc-300 bg-white hover:border-zinc-400' }}" 
+                                    data-amount="{{ amount }}">
+                                    <span class="block text-base sm:text-lg font-bold leading-tight {{ is_featured ? 'text-zinc-950' : 'text-zinc-900' }}">{{ amount }}</span>
+                                    <span class="block text-[10px] mt-1 leading-snug {{ is_featured ? 'text-zinc-800 font-medium' : 'text-zinc-500' }}">{{ label }}</span>
+                                </button>
+                            {{ /donation_options }}
+                        {{ else }}
+                            <button type="button" class="donation-amount-btn border border-zinc-300 rounded-xl p-2.5 sm:p-3 text-center transition hover:border-zinc-400 bg-white" data-amount="€9,-">
+                                <span class="block text-base sm:text-lg font-bold text-zinc-900 leading-tight">€9,-</span>
+                                <span class="block text-[10px] text-zinc-500 mt-1 leading-snug">1 Shelterbag per year</span>
+                            </button>
+                            <button type="button" class="donation-amount-btn border-2 border-[#FFD100] bg-[#FFD100] rounded-xl p-2.5 sm:p-3 text-center shadow-sm transition" data-amount="€18,-">
+                                <span class="block text-base sm:text-lg font-bold text-zinc-950 leading-tight">€18,-</span>
+                                <span class="block text-[10px] text-zinc-800 font-medium mt-1 leading-snug">2 Shelterbag per year</span>
+                            </button>
+                            <button type="button" class="donation-amount-btn border border-zinc-300 rounded-xl p-2.5 sm:p-3 text-center transition hover:border-zinc-400 bg-white" data-amount="€25,-">
+                                <span class="block text-base sm:text-lg font-bold text-zinc-900 leading-tight">€25,-</span>
+                                <span class="block text-[10px] text-zinc-500 mt-1 leading-snug">1 Sheltersuit per year</span>
+                            </button>
+                        {{ /if }}
+                    </div>
+
+                    <!-- Custom Amount Button -->
+                    <button type="button" class="w-full border border-zinc-300 rounded-xl py-2.5 mt-3 text-xs sm:text-sm font-display tracking-wider uppercase text-zinc-800 hover:bg-zinc-50 hover:border-zinc-400 transition font-bold">
+                        {{ donation_custom_label ?? "CHOOSE YOUR OWN AMOUNT" }}
+                    </button>
+
+                    <!-- Trust & Certification Meta -->
+                    <div class="mt-6 pt-4 border-t border-zinc-150 flex items-center justify-between text-zinc-500">
+                        <div class="text-[10px] font-mono leading-tight space-y-0.5">
+                            <p>IBAN: {{ donation_iban ?? "NL 82 RABO 0300 1360 09" }}</p>
+                            <p>RSIN: {{ donation_rsin ?? "8544 91 454" }}</p>
+                            <p>KVK: {{ donation_kvk ?? "61794899" }}</p>
+                        </div>
+                        
+                        <div class="flex items-center gap-2">
+                            <!-- ANBI Logo -->
+                            <div class="bg-[#00529C] text-white px-2 py-1 rounded text-[10px] font-bold tracking-wider font-sans">
+                                ANBI
+                            </div>
+                            
+                            <!-- CBF Erkend Goed Doel Logo -->
+                            <div class="flex items-center gap-1 border border-zinc-300 rounded px-1.5 py-0.5 bg-white">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#E83B3B] block"></span>
+                                <span class="text-[9px] font-bold text-zinc-800">CBF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Torn Edge Transition Divider -->
+    {{ partial src="partials/torn-edge" }}
+</section>

@@ -1,0 +1,192 @@
+title: Pages
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: page_builder
+            field:
+              type: replicator
+              display: 'Page Builder'
+              sets:
+                hero:
+                  display: 'Hero Section'
+                  fields:
+                    -
+                      handle: headline
+                      field:
+                        type: text
+                        display: 'Main Headline'
+                    -
+                      handle: lead_text
+                      field:
+                        type: textarea
+                        display: 'Lead Text'
+                    -
+                      handle: button_primary_text
+                      field:
+                        type: text
+                        display: 'Primary Button Text (Give Warmth)'
+                    -
+                      handle: button_primary_url
+                      field:
+                        type: text
+                        display: 'Primary Button URL'
+                    -
+                      handle: button_secondary_text
+                      field:
+                        type: text
+                        display: 'Secondary Button Text (About Us)'
+                    -
+                      handle: button_secondary_url
+                      field:
+                        type: text
+                        display: 'Secondary Button URL'
+                    -
+                      handle: background_image
+                      field:
+                        type: text
+                        display: 'Background Image Path'
+                    -
+                      handle: donation_title
+                      field:
+                        type: text
+                        display: 'Donation Card Title'
+                    -
+                      handle: donation_subtitle
+                      field:
+                        type: text
+                        display: 'Donation Card Subtitle'
+                    -
+                      handle: donation_options
+                      field:
+                        type: grid
+                        display: 'Donation Amount Options'
+                        fields:
+                          -
+                            handle: amount
+                            field:
+                              type: text
+                              display: Amount
+                          -
+                            handle: label
+                            field:
+                              type: text
+                              display: Description
+                          -
+                            handle: is_featured
+                            field:
+                              type: toggle
+                              display: 'Featured (Yellow selected)'
+                    -
+                      handle: donation_custom_label
+                      field:
+                        type: text
+                        display: 'Custom Amount Button Label'
+                    -
+                      handle: donation_iban
+                      field:
+                        type: text
+                        display: 'IBAN'
+                    -
+                      handle: donation_rsin
+                      field:
+                        type: text
+                        display: 'RSIN'
+                    -
+                      handle: donation_kvk
+                      field:
+                        type: text
+                        display: 'KVK'
+                intro:
+                  display: 'Intro / About Section'
+                  fields:
+                    -
+                      handle: badge
+                      field:
+                        type: text
+                        display: 'Eyebrow / Badge'
+                    -
+                      handle: headline
+                      field:
+                        type: text
+                        display: Headline
+                    -
+                      handle: highlight_text
+                      field:
+                        type: text
+                        display: 'Highlighted Text (Red underline)'
+                    -
+                      handle: paragraph_1
+                      field:
+                        type: textarea
+                        display: 'Paragraph 1'
+                    -
+                      handle: paragraph_2
+                      field:
+                        type: textarea
+                        display: 'Paragraph 2'
+                    -
+                      handle: button_text
+                      field:
+                        type: text
+                        display: 'Button Text'
+                    -
+                      handle: button_url
+                      field:
+                        type: text
+                        display: 'Button URL'
+                stats:
+                  display: 'Impact Stats Section'
+                  fields:
+                    -
+                      handle: items
+                      field:
+                        type: grid
+                        display: 'Impact Items'
+                        fields:
+                          -
+                            handle: icon
+                            field:
+                              type: select
+                              display: Icon
+                              options:
+                                shelterbag: 'Shelterbag / Sleeping Bag'
+                                sewing: 'Sewing Machine'
+                                upcycle: 'Recycling / Upcycle Sprout'
+                          -
+                            handle: number
+                            field:
+                              type: text
+                              display: Number
+                          -
+                            handle: label
+                            field:
+                              type: text
+                              display: Label
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              max_items: 1

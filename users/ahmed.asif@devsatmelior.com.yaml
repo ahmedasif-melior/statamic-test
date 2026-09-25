@@ -1,3 +1,7 @@
 super: true
 id: c0961914-95cf-4976-a337-c9b7cee3968c
 password_hash: $2y$12$ZiqGmk0H9HpacU6aJyl8n.47aH6zkKQtSiuGsZg5s.wCBcWJXHKpG
+preferences:
+  collections:
+    pages:
+      view: tree

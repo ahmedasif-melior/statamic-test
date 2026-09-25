@@ -1,0 +1,42 @@
+<section class="bg-white py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            
+            <!-- Left Column: Eyebrow + Signature Headline with Brush Highlight -->
+            <div class="lg:col-span-6">
+                <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-3 sm:mb-4 block">
+                    {{ badge ?? "NICE TO MEET YOU" }}
+                </span>
+                
+                <h2 class="font-display text-4xl sm:text-5xl md:text-6xl text-zinc-950 uppercase leading-[1.05] tracking-tight max-w-lg">
+                    <span class="relative inline-block whitespace-nowrap z-10">
+                        <span class="relative z-10">{{ highlight_text ?? "HELPING PEOPLE" }}</span>
+                        <span class="absolute left-0 right-0 bottom-1 sm:bottom-2 h-3 sm:h-4.5 bg-[#E83B3B] -z-10 rounded-xs"></span>
+                    </span>
+                    <span class="block mt-1">
+                        IN NEED AROUND<br>THE WORLD
+                    </span>
+                </h2>
+            </div>
+
+            <!-- Right Column: Mission Copy & CTA -->
+            <div class="lg:col-span-6 flex flex-col justify-between h-full pt-1 lg:pt-8">
+                <div class="space-y-5 text-sm sm:text-base md:text-[17px] text-zinc-700 leading-relaxed max-w-xl font-sans">
+                    <p>
+                        {{ paragraph_1 ?? "You are important. Willing to make change. But you cannot do this on your own. That's why we are here to bridge the gap." }}
+                    </p>
+                    <p>
+                        {{ paragraph_2 ?? "Between those who need shelter and those willing to help. With innovative products, delivering immediate impact. As a social enterprise we operate globally and locally with great care for dignity and are always keen on sustainability." }}
+                    </p>
+                </div>
+
+                <div class="mt-8 sm:mt-10">
+                    <a href="{{ button_url ?? '#about' }}" class="inline-flex items-center justify-center bg-[#E83B3B] hover:bg-[#d32a2a] text-white font-display text-xl tracking-wider uppercase px-8 py-2.5 rounded shadow-sm hover:shadow transition transform hover:-translate-y-0.5">
+                        {{ button_text ?? "ABOUT US" }}
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

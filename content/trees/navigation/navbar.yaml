@@ -1,0 +1,21 @@
+tree:
+  -
+    id: nav-what-we-do
+    title: 'What we do'
+    url: '#what-we-do'
+  -
+    id: nav-get-involved
+    title: 'Get involved'
+    url: '#get-involved'
+  -
+    id: nav-ngos
+    title: 'For NGOs'
+    url: '#ngos'
+  -
+    id: nav-products
+    title: 'Our products'
+    url: '#products'
+  -
+    id: nav-about-us
+    title: 'About us'
+    url: '#about'

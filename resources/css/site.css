@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
 @import "tailwindcss";
+
 @source "../views";
 @source "../../content";
+
+@theme {
+  --font-display: 'Bebas Neue', 'Oswald', sans-serif;
+  --font-heading: 'Oswald', 'Bebas Neue', sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-brand-yellow: #FFD100;
+  --color-brand-yellow-hover: #EBBF00;
+  --color-brand-red: #E83B3B;
+  --color-brand-red-hover: #D32A2A;
+  --color-brand-dark: #111827;
+}
+
+/* Custom highlight underline effect */
+.highlight-stroke {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-stroke::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 9px;
+  background-color: #E83B3B;
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.highlight-stroke span {
+  position: relative;
+  z-index: 1;
+}

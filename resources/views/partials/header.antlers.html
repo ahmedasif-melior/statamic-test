@@ -1,0 +1,65 @@
+<header class="absolute top-0 left-0 w-full z-40 bg-gradient-to-b from-black/75 via-black/35 to-transparent py-4 px-4 md:px-8 lg:px-12 text-white">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5 group">
+            <svg class="w-8 h-8 md:w-9 md:h-9 text-white fill-current transition-transform group-hover:scale-105" viewBox="0 0 40 40">
+                <path d="M20 3C14 3 9 7 9 13C9 17.5 12 21 16 23.5C14 26 12 28.5 12 32C12 36.5 15.5 39 20 39C25 39 28 35.5 28 31C28 26.5 24 23 20 20.5C23 18.5 25 15.5 25 12C25 7 21 3 20 3ZM20 6C23.5 6 25 8.5 25 12C25 14.5 23.5 17 20.5 18.5C18.5 16 17 13.5 17 11C17 7.5 18.5 6 20 6ZM20 36C17 36 15 34 15 31C15 28.5 17 26 19.5 23.5C22.5 25.5 25 28 25 31C25 34 23 36 20 36Z" fill="currentColor"/>
+            </svg>
+            <span class="text-2xl md:text-3xl font-bold tracking-tight font-sans text-white">
+                Sheltersuit
+            </span>
+        </a>
+
+        <!-- Desktop Navigation (Editable via Navigation -> Navbar) -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-white/90">
+            {{ nav:navbar }}
+                <div class="relative group">
+                    <a href="{{ url }}" class="flex items-center gap-1 hover:text-white transition py-2">
+                        <span>{{ title }}</span>
+                        <svg class="w-3.5 h-3.5 opacity-80 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </a>
+                </div>
+            {{ /nav:navbar }}
+        </nav>
+
+        <!-- Right actions -->
+        <div class="flex items-center space-x-4">
+            <a href="#donate" class="bg-[#FFD100] text-zinc-950 px-5 py-2.5 text-xs md:text-sm font-extrabold tracking-wider uppercase rounded hover:bg-[#ebbf00] transition shadow-md">
+                DONATE NOW
+            </a>
+
+            <!-- Search icon -->
+            <button type="button" class="p-2 text-white/90 hover:text-white transition" aria-label="Search">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </button>
+
+            <!-- Language Switcher -->
+            <button type="button" class="flex items-center gap-1 p-2 text-white/90 hover:text-white transition" aria-label="Switch Language">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <svg class="w-3.5 h-3.5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+
+            <!-- Mobile menu button -->
+            <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 text-white hover:text-[#FFD100] transition" aria-label="Open menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden mt-4 pt-4 border-t border-white/15 space-y-3 pb-2 text-base font-medium">
+        {{ nav:navbar }}
+            <a href="{{ url }}" class="block py-1 hover:text-[#FFD100] transition">{{ title }}</a>
+        {{ /nav:navbar }}
+    </div>
+</header>

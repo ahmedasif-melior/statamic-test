@@ -1,0 +1,125 @@
+<section class="bg-white py-14 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-100">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-14 lg:gap-16 text-center">
+            
+            {{ if items }}
+                {{ items }}
+                    <div class="flex flex-col items-center justify-start group">
+                        <!-- Icon Container -->
+                        <div class="h-20 sm:h-24 flex items-center justify-center mb-5 sm:mb-6 transition-transform duration-300 group-hover:scale-110">
+                            {{ if icon == "shelterbag" }}
+                                <svg class="w-16 h-16 sm:w-20 sm:h-20 text-zinc-900" viewBox="0 0 64 74" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 22 C20 9 44 9 44 22 C44 26 42 28 42 28 L22 28 C22 28 20 26 20 22 Z" />
+                                    <ellipse cx="32" cy="18" rx="6" ry="7" stroke-width="3" />
+                                    <rect x="18" y="28" width="28" height="12" rx="6" />
+                                    <rect x="18" y="40" width="28" height="12" rx="6" />
+                                    <rect x="19" y="52" width="26" height="14" rx="7" />
+                                </svg>
+                            {{ elseif icon == "sewing" }}
+                                <svg class="w-16 h-16 sm:w-20 sm:h-20 text-zinc-900" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="8" y1="52" x2="56" y2="52" stroke-width="4"/>
+                                    <rect x="12" y="46" width="40" height="6" rx="1.5"/>
+                                    <path d="M46 46 V24 C46 21 43 19 39 19 H22 C18 19 16 21 16 25 V34 H24"/>
+                                    <line x1="20" y1="34" x2="20" y2="46" stroke-width="2.5"/>
+                                    <line x1="28" y1="19" x2="28" y2="13"/>
+                                    <rect x="25" y="13" width="6" height="5" rx="1"/>
+                                    <ellipse cx="46" cy="27" rx="3.5" ry="6" fill="currentColor" opacity="0.2"/>
+                                    <circle cx="34" cy="30" r="2.5" fill="currentColor"/>
+                                </svg>
+                            {{ elseif icon == "upcycle" }}
+                                <svg class="w-16 h-16 sm:w-20 sm:h-20 text-zinc-900" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M32 8 C43 8 52 16 54 27" />
+                                    <polyline points="50,28 55,27 58,22" />
+                                    <path d="M54 37 C51 48 42 56 31 56 C24 56 18 53 14 47" />
+                                    <polyline points="14,53 14,47 19,45" />
+                                    <path d="M10 32 C10 23 15 15 24 10" />
+                                    <polyline points="23,16 24,10 19,8" />
+                                    <path d="M32 44 V30" stroke-width="3" />
+                                    <path d="M32 32 C32 26 23 25 21 31 C21 37 32 34 32 32 Z" stroke-width="2.5" fill="currentColor" opacity="0.2" />
+                                    <path d="M32 30 C32 23 41 22 43 28 C43 34 32 32 32 30 Z" stroke-width="2.5" fill="currentColor" opacity="0.2" />
+                                </svg>
+                            {{ else }}
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center text-zinc-900">
+                                    <span class="text-3xl font-display font-bold">★</span>
+                                </div>
+                            {{ /if }}
+                        </div>
+
+                        <!-- Red Big Number -->
+                        <div class="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-[#E83B3B] leading-none tracking-tight">
+                            {{ number }}
+                        </div>
+
+                        <!-- Description Label -->
+                        <p class="mt-3 text-sm sm:text-base md:text-[17px] text-zinc-800 font-medium font-sans">
+                            {{ label }}
+                        </p>
+                    </div>
+                {{ /items }}
+            {{ else }}
+                <!-- Default Fallback Stats -->
+                <div class="flex flex-col items-center justify-start group">
+                    <div class="h-20 sm:h-24 flex items-center justify-center mb-5 sm:mb-6 transition-transform duration-300 group-hover:scale-110">
+                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-zinc-900" viewBox="0 0 64 74" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 22 C20 9 44 9 44 22 C44 26 42 28 42 28 L22 28 C22 28 20 26 20 22 Z" />
+                            <ellipse cx="32" cy="18" rx="6" ry="7" stroke-width="3" />
+                            <rect x="18" y="28" width="28" height="12" rx="6" />
+                            <rect x="18" y="40" width="28" height="12" rx="6" />
+                            <rect x="19" y="52" width="26" height="14" rx="7" />
+                        </svg>
+                    </div>
+                    <div class="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-[#E83B3B] leading-none tracking-tight">
+                        40.661
+                    </div>
+                    <p class="mt-3 text-sm sm:text-base md:text-[17px] text-zinc-800 font-medium font-sans">
+                        products handed out
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center justify-start group">
+                    <div class="h-20 sm:h-24 flex items-center justify-center mb-5 sm:mb-6 transition-transform duration-300 group-hover:scale-110">
+                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-zinc-900" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="8" y1="52" x2="56" y2="52" stroke-width="4"/>
+                            <rect x="12" y="46" width="40" height="6" rx="1.5"/>
+                            <path d="M46 46 V24 C46 21 43 19 39 19 H22 C18 19 16 21 16 25 V34 H24"/>
+                            <line x1="20" y1="34" x2="20" y2="46" stroke-width="2.5"/>
+                            <line x1="28" y1="19" x2="28" y2="13"/>
+                            <rect x="25" y="13" width="6" height="5" rx="1"/>
+                            <ellipse cx="46" cy="27" rx="3.5" ry="6" fill="currentColor" opacity="0.2"/>
+                            <circle cx="34" cy="30" r="2.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-[#E83B3B] leading-none tracking-tight">
+                        251
+                    </div>
+                    <p class="mt-3 text-sm sm:text-base md:text-[17px] text-zinc-800 font-medium font-sans">
+                        opportunites created
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center justify-start group">
+                    <div class="h-20 sm:h-24 flex items-center justify-center mb-5 sm:mb-6 transition-transform duration-300 group-hover:scale-110">
+                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-zinc-900" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M32 8 C43 8 52 16 54 27" />
+                            <polyline points="50,28 55,27 58,22" />
+                            <path d="M54 37 C51 48 42 56 31 56 C24 56 18 53 14 47" />
+                            <polyline points="14,53 14,47 19,45" />
+                            <path d="M10 32 C10 23 15 15 24 10" />
+                            <polyline points="23,16 24,10 19,8" />
+                            <path d="M32 44 V30" stroke-width="3" />
+                            <path d="M32 32 C32 26 23 25 21 31 C21 37 32 34 32 32 Z" stroke-width="2.5" fill="currentColor" opacity="0.2" />
+                            <path d="M32 30 C32 23 41 22 43 28 C43 34 32 32 32 30 Z" stroke-width="2.5" fill="currentColor" opacity="0.2" />
+                        </svg>
+                    </div>
+                    <div class="font-display font-bold text-5xl sm:text-6xl md:text-7xl text-[#E83B3B] leading-none tracking-tight">
+                        197.641
+                    </div>
+                    <p class="mt-3 text-sm sm:text-base md:text-[17px] text-zinc-800 font-medium font-sans">
+                        kgs of waste upcycled
+                    </p>
+                </div>
+            {{ /if }}
+
+        </div>
+    </div>
+</section>

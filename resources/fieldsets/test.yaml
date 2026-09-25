@@ -1,0 +1,30 @@
+title: Test
+fields:
+  -
+    handle: icon_field
+    field:
+      type: icon
+      display: 'Icon Field'
+      width: 25
+  -
+    handle: text_field
+    field:
+      type: text
+      display: 'Text Field'
+      width: 50
+  -
+    handle: textarea_field
+    field:
+      type: textarea
+      display: 'Textarea Field'
+  -
+    handle: assets_field
+    field:
+      container: assets
+      type: assets
+      display: 'Assets Field'
+  -
+    handle: link_field
+    field:
+      type: link
+      display: 'Link Field'
